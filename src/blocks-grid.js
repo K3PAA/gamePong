@@ -1,18 +1,6 @@
-import Player from './src/Player.js'
-// import drawBricks from './src/blocks-grid.js'
-import Brick from "./src/Brick.js"
+import Brick from "./Brick"
 
-const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
-
-canvas.width = 1000
-canvas.height = 500
-
-c.fillRect(0, 0, canvas.width, canvas.height)
-
-const bricks = []
-
-function drawBricks(){
+export default function drawBricks(bricks){
     let howMuch = 1
     const rowPosition = 6
     let colPosition = 8
@@ -44,21 +32,3 @@ function drawBricks(){
     }
 }
 
-drawBricks()
-
-const player = new Player({
-    velocity: {
-        x: 0,
-        y: 0
-    }
-})
-
-
-function animate(){
-    requestAnimationFrame(animate)
-    c.fillStyle = 'black'
-    c.fillRect(0, 0, canvas.width, canvas.height)
-    player.update()
-    bricks.forEach( brick => brick.draw())
-}
-animate()

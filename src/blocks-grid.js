@@ -1,6 +1,8 @@
 import Brick from "./Brick"
 
-export default function drawBricks(bricks){
+const bricks = []
+
+function drawBricks(){
     let howMuch = 1
     const rowPosition = 6
     let colPosition = 8
@@ -32,3 +34,6 @@ export default function drawBricks(bricks){
     }
 }
 
+drawBricks()
+
+export default bricks
